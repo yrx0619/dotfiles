@@ -103,3 +103,15 @@ You need install following package to compile YCM:
 * [mosh](https://mosh.org/#getting): Mosh is a replacement for SSH. It's more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.
 * [fzf](https://github.com/junegunn/fzf): A command-line fuzzy finder written in Go.
 * [PathPicker(fpp)](https://github.com/facebook/PathPicker): A simple command line tool that solves the perpetual problem of selecting files out of bash output.
+
+## centos vim 7.4版本升级
+*yum install ncurses-devel
+*wget https://github.com/vim/vim/archive/master.zip
+*unzip master.zip
+*cd vim-master
+*cd src/
+*./configure --enable-pythoninterp=yes --enable-python3interp=yes
+*make
+*sudo make install
+*vim
+
