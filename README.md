@@ -1086,3 +1086,39 @@ pbpaste
 
 1. [vim-sdf13](http://vim.spf13.com/)。
 2. [所需即所获：像 IDE 一样使用 vim](https://github.com/yangyangwithgnu/use_vim_as_ide)。
+
+## ubuntu12.04
+1.Your C++ compiler does NOT fully support C++11的错误
+gcc版本不对，需要升级为4.8以上的版本
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update; sudo apt-get install gcc-4.8 g++-4.8
+sudo update-alternatives --remove-all gcc 
+
+sudo update-alternatives --remove-all g++
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 20
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
+
+sudo update-alternatives --config gcc
+
+sudo update-alternatives --config g++
+```
+2.vim版本低于7.4,升级vim8
+```
+git clone https://github.com/vim/vim.git 
+./configure  --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu
+make
+make install
+```
+若没有config.c文件的话可以执行一下sudo apt-get install python-dev试试
+
+3.vim 编译错误
+no terminal library found
+checking for tgetent()… configure: error: NOT FOUND!
+      You need to install a terminal library; for example ncurses.
+      Or specify the name of the library with –with-tlib.
+```
+sudo apt install libncurses5-dev
+```
