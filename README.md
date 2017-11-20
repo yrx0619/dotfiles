@@ -1122,3 +1122,14 @@ checking for tgetent()… configure: error: NOT FOUND!
 ```
 sudo apt install libncurses5-dev
 ```
+vim 7改为vim8
+1.删除vim7
+```
+apt-get autoremove vim
+```
+2.安装编译vim8
+3.找到vim8路径
+```
+which vim
+```
+4.关闭终端，重启打开即可
