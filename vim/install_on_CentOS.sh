@@ -2,6 +2,10 @@
 
 yum install -y ctags cmake gcc-c++ python-devel
 
+sudo pip install flake8
+
+sudo pip install autopep8
+
 if ! ctags --list-languages | grep -qi python; then
     echo "Fail to install ctags!"
     exit 1
